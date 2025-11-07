@@ -9,7 +9,6 @@ export const mockApiInterceptor: HttpInterceptorFn = (req, next) => {
   if (url.includes('/api/clients') && method === 'GET') {
     // Extrair parâmetros da URL
     const urlParams = new URLSearchParams(url.split('?')[1] || '');
-    console.log(urlParams);
     const page = parseInt(urlParams.get('page') || '1');
     const pageSize = parseInt(urlParams.get('pageSize') || '10');
     const name = urlParams.get('name') || '';
@@ -20,7 +19,6 @@ export const mockApiInterceptor: HttpInterceptorFn = (req, next) => {
 
     // Filtrar clientes
     let filteredClients = [...mockClients];
-    console.log(page, pageSize);
     if (name) {
       filteredClients = filteredClients.filter((client) =>
         client.name.toLowerCase().includes(name.toLowerCase())
