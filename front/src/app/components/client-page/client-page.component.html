@@ -1,0 +1,79 @@
+<div id="clients-screen-container">
+  <div
+    id="clients-filters"
+    style="display: flex; justify-content: space-around"
+  >
+    @for(entry of filtersNameMapping | keyvalue; track entry.key){
+    <div class="input-data-div">
+      <p-iftalabel>
+        <input
+          class="input-data"
+          pInputText
+          [id]="entry.key"
+          [(ngModel)]="filters[entry.key]"
+          autocomplete="off"
+        />
+        <label [for]="entry.key">{{ entry.value }}</label>
+      </p-iftalabel>
+    </div>
+    }
+  </div>
+  <div class="buttons-div">
+    <p-button id="filter-button">Filtrar</p-button>
+    <!-- <p-button id="create-button">Adicionar</p-button> -->
+    <app-modal />
+  </div>
+  <div id="clients-table">
+    <p-table
+      [value]="clients"
+      [scrollable]="true"
+      [rows]="8"
+      [paginator]="true"
+      [totalRecords]="totalRecords"
+      [lazy]="true"
+      (onLazyLoad)="onPageChange($event)"
+    >
+      <ng-template #header>
+        <tr>
+          @for(header of headers; track header){
+          <th>{{ header }}</th>
+          }
+          <th>Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template #body let-client>
+        <tr>
+          @for(header of headers; track header){
+          <td>{{ client[header] }}</td>
+          }
+          <td>
+            <div style="display: flex; gap: 0.5rem; justify-content: center">
+              <button
+                style="
+                  background: none;
+                  border: none;
+                  cursor: pointer;
+                  padding: 4px;
+                  color: rgb(175, 175, 9);
+                "
+              >
+                <i class="pi pi-pencil"></i>
+              </button>
+              <button
+                style="
+                  background: none;
+                  border: none;
+                  cursor: pointer;
+                  padding: 4px;
+                  color: red;
+                "
+              >
+                <i class="pi pi-times"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

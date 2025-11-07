@@ -1,0 +1,19 @@
+.modal-form-fields {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.modal-field-div {
+  padding: 4px 10px;
+  /* flex: 1; */
+}
+
+.modal-field {
+  width: 100%;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: right;
+}

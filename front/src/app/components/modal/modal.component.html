@@ -1,0 +1,116 @@
+<p-button label="Adicionar" (onClick)="setOpenModal(true)" id="create-button" />
+
+<p-dialog
+  [header]="title"
+  [(visible)]="open"
+  [modal]="true"
+  [style]="{ width: '50vw' }"
+>
+  <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+    <div class="modal-form-fields">
+      <div class="modal-field-div">
+        <p-iftalabel>
+          <input
+            class="modal-field"
+            pInputText
+            id="name"
+            formControlName="name"
+            [class.ng-invalid]="
+              clientForm.get('name')?.invalid && clientForm.get('name')?.touched
+            "
+          />
+          <label for="name">Nome</label>
+        </p-iftalabel>
+        @if(clientForm.get('name')?.invalid && clientForm.get('name')?.touched){
+        <small class="p-error"> Nome deve ter ao menos 3 caracteres </small>
+        }
+      </div>
+
+      <div class="modal-field-div">
+        <p-iftalabel>
+          <input
+            class="modal-field"
+            pInputText
+            id="phone"
+            formControlName="phone"
+            [class.ng-invalid]="
+              clientForm.get('phone')?.invalid &&
+              clientForm.get('phone')?.touched
+            "
+          />
+          <label for="phone">Telefone</label>
+        </p-iftalabel>
+        @if(clientForm.get('phone')?.invalid &&
+        clientForm.get('phone')?.touched){
+        <small class="p-error"> Telefone é obrigatório </small>
+        }
+      </div>
+      <div class="modal-field-div">
+        <p-iftalabel>
+          <input
+            class="modal-field"
+            pInputText
+            id="cpf"
+            formControlName="cpf"
+            [class.ng-invalid]="
+              clientForm.get('cpf')?.invalid && clientForm.get('cpf')?.touched
+            "
+          />
+          <label for="cpf">CPF</label>
+        </p-iftalabel>
+        @if(clientForm.get('cpf')?.invalid && clientForm.get('cpf')?.touched){
+        <small class="p-error"> CPF deve conter 11 dígitos </small>
+        }
+      </div>
+
+      <div class="modal-field-div">
+        <p-iftalabel>
+          <input
+            class="modal-field"
+            pInputText
+            id="email"
+            formControlName="email"
+            [class.ng-invalid]="
+              clientForm.get('email')?.invalid &&
+              clientForm.get('email')?.touched
+            "
+          />
+          <label for="email">Email</label>
+        </p-iftalabel>
+        @if(clientForm.get('email')?.invalid &&
+        clientForm.get('email')?.touched){
+        <small class="p-error"> Email inválido </small>
+        }
+      </div>
+
+      <div class="modal-field-div">
+        <p-iftalabel>
+          <input
+            class="modal-field"
+            pInputText
+            id="uf"
+            formControlName="uf"
+            maxlength="2"
+            [class.ng-invalid]="
+              clientForm.get('uf')?.invalid && clientForm.get('uf')?.touched
+            "
+          />
+          <label for="uf">UF</label>
+        </p-iftalabel>
+        @if(clientForm.get('uf')?.invalid && clientForm.get('uf')?.touched){
+        <small class="p-error"> UF deve ter 2 caracteres </small>
+        }
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <p-button
+        label="Cancelar"
+        severity="secondary"
+        (onClick)="onCancel()"
+        type="button"
+      />
+      <p-button label="Salvar" type="submit" [disabled]="false" />
+    </div>
+  </form>
+</p-dialog>

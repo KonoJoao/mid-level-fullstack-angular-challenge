@@ -1,0 +1,40 @@
+@import "primeicons/primeicons.css";
+
+.input-data {
+  width: 100%;
+}
+
+.input-data-div {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.buttons-div {
+  gap: 8px;
+  width: 100%;
+  justify-content: right;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+:host ::ng-deep #filter-button button {
+  background-color: rgb(54, 54, 223);
+  border-color: rgb(25, 25, 155);
+  color: white;
+}
+
+:host ::ng-deep #filter-button button:hover {
+  background-color: rgb(20, 20, 130);
+  border-color: rgb(20, 20, 130);
+}
+
+#clients-filters {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+#clients-screen-container {
+  height: 100dvh;
+}

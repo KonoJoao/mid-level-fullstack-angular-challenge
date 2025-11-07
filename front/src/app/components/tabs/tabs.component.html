@@ -1,0 +1,12 @@
+<p-tabs [value]="currentTab">
+  <p-tablist>
+    <p-tab (onClick)="setCurrentTab(0)" [value]="0">Clientes</p-tab>
+    <p-tab (onClick)="setCurrentTab(1)" [value]="1">Pedidos</p-tab>
+  </p-tablist>
+  <p-tabpanels>
+    <p-tabpanel [value]="0">
+      <app-client-page />
+    </p-tabpanel>
+    <p-tabpanel [value]="1"> </p-tabpanel>
+  </p-tabpanels>
+</p-tabs>
