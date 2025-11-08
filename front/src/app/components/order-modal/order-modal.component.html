@@ -1,0 +1,150 @@
+<p-dialog
+  [header]="title"
+  [(visible)]="open"
+  (visibleChange)="handleVisibleChange($event)"
+  [modal]="true"
+  [style]="{ width: '70vw' }"
+>
+  <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+    <div class="modal-form-fields">
+      <div class="modal-field-div">
+        <label for="clientId">Cliente</label>
+        <p-select
+          id="clientId"
+          formControlName="clientId"
+          [options]="clientOptions"
+          optionLabel="label"
+          optionValue="value"
+          placeholder="Selecione um cliente"
+          styleClass="modal-field"
+          [disabled]="isVisualizationMode"
+        />
+        @if(orderForm.get('clientId')?.invalid &&
+        orderForm.get('clientId')?.touched){
+        <small class="p-error"> Selecione um cliente </small>
+        }
+      </div>
+
+      <div class="modal-field-div">
+        <label for="status">Status</label>
+        <p-select
+          id="status"
+          formControlName="status"
+          [options]="statusOptions"
+          optionLabel="label"
+          optionValue="value"
+          placeholder="Selecione o status"
+          styleClass="modal-field"
+          [disabled]="isVisualizationMode"
+        />
+        @if(orderForm.get('status')?.invalid &&
+        orderForm.get('status')?.touched){
+        <small class="p-error"> Status é obrigatório </small>
+        }
+      </div>
+    </div>
+
+    <div class="items-section">
+      <div class="items-header">
+        @if (!isVisualizationMode) {
+        <h3>Itens do Pedido</h3>
+        <p-button
+          type="button"
+          label="Adicionar Item"
+          icon="pi pi-plus"
+          (onClick)="addItem()"
+          severity="secondary"
+          size="small"
+        />
+        }
+      </div>
+
+      <div formArrayName="items" class="items-list">
+        @for(item of items.controls; track $index; let i = $index){
+        <div [formGroupName]="i" class="item-card">
+          <div class="item-header">
+            <h4>Item {{ i + 1 }}</h4>
+            @if(items.length > 1){
+            <p-button
+              type="button"
+              icon="pi pi-trash"
+              (onClick)="removeItem(i)"
+              severity="danger"
+              size="small"
+              [text]="true"
+            />
+            }
+          </div>
+
+          <div class="item-fields">
+            <div class="modal-field-div">
+              <p-iftalabel>
+                <input class="modal-field" pInputText formControlName="name" />
+                <label>Nome do Produto</label>
+              </p-iftalabel>
+            </div>
+
+            <div class="modal-field-div">
+              <p-iftalabel>
+                <input
+                  class="modal-field"
+                  pInputText
+                  type="number"
+                  formControlName="value"
+                  (input)="calculateItemTotal(i)"
+                />
+                <label>Valor Unitário</label>
+              </p-iftalabel>
+            </div>
+
+            <div class="modal-field-div">
+              <p-iftalabel>
+                <input
+                  class="modal-field"
+                  pInputText
+                  type="number"
+                  formControlName="quantity"
+                  (input)="calculateItemTotal(i)"
+                />
+                <label>Quantidade</label>
+              </p-iftalabel>
+            </div>
+
+            <div class="modal-field-div">
+              <p-iftalabel>
+                <input
+                  class="modal-field"
+                  pInputText
+                  type="number"
+                  formControlName="totalValue"
+                  [readonly]="true"
+                />
+                <label>Total do Item</label>
+              </p-iftalabel>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+
+      <div class="order-total">
+        <strong
+          >Total do Pedido: R$ {{ getTotalOrder() | number : "1.2-2" }}</strong
+        >
+      </div>
+    </div>
+
+    @if (!isVisualizationMode) {
+    <div class="modal-footer">
+      <p-button
+        label="Cancelar"
+        severity="secondary"
+        (onClick)="onCancel()"
+        type="button"
+      />
+      <p-button label="Salvar" type="submit" [disabled]="orderForm.invalid" />
+    </div>
+    }
+  </form>
+</p-dialog>
+<p-toast></p-toast>

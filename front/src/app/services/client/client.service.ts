@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ClientDto } from '../common/dto/client.dto';
+import { ClientDto } from '../../common/dto/client.dto';
 
 export interface PaginatedResponse<T> {
   data: T[];
@@ -59,6 +59,7 @@ export class ClientService {
   }
 
   updateClient(id: number, client: ClientDto): Observable<ClientDto> {
+    console.log('passou no edit ');
     return this.http.put<ClientDto>(`${this.apiUrl}/${id}`, client);
   }
 

@@ -1,8 +1,7 @@
-<p-button label="Adicionar" (onClick)="setOpenModal(true)" id="create-button" />
-
 <p-dialog
   [header]="title"
   [(visible)]="open"
+  (visibleChange)="handleVisibleChange($event)"
   [modal]="true"
   [style]="{ width: '50vw' }"
 >
@@ -114,3 +113,4 @@
     </div>
   </form>
 </p-dialog>
+<p-toast></p-toast>

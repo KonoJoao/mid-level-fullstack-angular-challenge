@@ -1,0 +1,175 @@
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "clientId": 1,
+    "clientName": "João Silva",
+    "status": "PENDENTE",
+    "items": [
+      { "name": "Produto A", "value": 50.00, "quantity": 2, "totalValue": 100.00 },
+      { "name": "Produto B", "value": 30.00, "quantity": 1, "totalValue": 30.00 }
+    ],
+    "totalOrder": 130.00,
+    "createdAt": "2024-11-01T10:30:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440002",
+    "clientId": 2,
+    "clientName": "Maria Santos",
+    "status": "APROVADO",
+    "items": [
+      { "name": "Produto C", "value": 75.50, "quantity": 3, "totalValue": 226.50 }
+    ],
+    "totalOrder": 226.50,
+    "createdAt": "2024-11-02T14:20:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440003",
+    "clientId": 3,
+    "clientName": "Pedro Oliveira",
+    "status": "ENTREGUE",
+    "items": [
+      { "name": "Produto D", "value": 120.00, "quantity": 1, "totalValue": 120.00 },
+      { "name": "Produto E", "value": 45.00, "quantity": 2, "totalValue": 90.00 }
+    ],
+    "totalOrder": 210.00,
+    "createdAt": "2024-10-28T09:15:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440004",
+    "clientId": 4,
+    "clientName": "Ana Costa",
+    "status": "CANCELADO",
+    "items": [
+      { "name": "Produto F", "value": 25.00, "quantity": 4, "totalValue": 100.00 }
+    ],
+    "totalOrder": 100.00,
+    "createdAt": "2024-10-25T16:45:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440005",
+    "clientId": 5,
+    "clientName": "Carlos Souza",
+    "status": "PENDENTE",
+    "items": [
+      { "name": "Produto G", "value": 150.00, "quantity": 1, "totalValue": 150.00 },
+      { "name": "Produto H", "value": 80.00, "quantity": 2, "totalValue": 160.00 },
+      { "name": "Produto I", "value": 35.00, "quantity": 3, "totalValue": 105.00 }
+    ],
+    "totalOrder": 415.00,
+    "createdAt": "2024-11-03T11:00:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440006",
+    "clientId": 1,
+    "clientName": "João Silva",
+    "status": "APROVADO",
+    "items": [
+      { "name": "Produto J", "value": 200.00, "quantity": 1, "totalValue": 200.00 }
+    ],
+    "totalOrder": 200.00,
+    "createdAt": "2024-11-04T08:30:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440007",
+    "clientId": 6,
+    "clientName": "Juliana Lima",
+    "status": "ENTREGUE",
+    "items": [
+      { "name": "Produto K", "value": 60.00, "quantity": 2, "totalValue": 120.00 },
+      { "name": "Produto L", "value": 40.00, "quantity": 1, "totalValue": 40.00 }
+    ],
+    "totalOrder": 160.00,
+    "createdAt": "2024-10-30T13:20:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440008",
+    "clientId": 7,
+    "clientName": "Roberto Alves",
+    "status": "PENDENTE",
+    "items": [
+      { "name": "Produto M", "value": 95.00, "quantity": 3, "totalValue": 285.00 }
+    ],
+    "totalOrder": 285.00,
+    "createdAt": "2024-11-05T10:15:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440009",
+    "clientId": 8,
+    "clientName": "Fernanda Rocha",
+    "status": "APROVADO",
+    "items": [
+      { "name": "Produto N", "value": 110.00, "quantity": 1, "totalValue": 110.00 },
+      { "name": "Produto O", "value": 55.00, "quantity": 2, "totalValue": 110.00 }
+    ],
+    "totalOrder": 220.00,
+    "createdAt": "2024-11-01T15:40:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440010",
+    "clientId": 9,
+    "clientName": "Lucas Martins",
+    "status": "ENTREGUE",
+    "items": [
+      { "name": "Produto P", "value": 70.00, "quantity": 4, "totalValue": 280.00 }
+    ],
+    "totalOrder": 280.00,
+    "createdAt": "2024-10-27T12:00:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440011",
+    "clientId": 10,
+    "clientName": "Patricia Ferreira",
+    "status": "CANCELADO",
+    "items": [
+      { "name": "Produto Q", "value": 180.00, "quantity": 1, "totalValue": 180.00 }
+    ],
+    "totalOrder": 180.00,
+    "createdAt": "2024-10-26T09:30:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440012",
+    "clientId": 11,
+    "clientName": "Bruno Cardoso",
+    "status": "PENDENTE",
+    "items": [
+      { "name": "Produto R", "value": 42.00, "quantity": 5, "totalValue": 210.00 },
+      { "name": "Produto S", "value": 88.00, "quantity": 1, "totalValue": 88.00 }
+    ],
+    "totalOrder": 298.00,
+    "createdAt": "2024-11-06T14:10:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440013",
+    "clientId": 12,
+    "clientName": "Camila Dias",
+    "status": "APROVADO",
+    "items": [
+      { "name": "Produto T", "value": 65.00, "quantity": 2, "totalValue": 130.00 }
+    ],
+    "totalOrder": 130.00,
+    "createdAt": "2024-11-02T11:25:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440014",
+    "clientId": 2,
+    "clientName": "Maria Santos",
+    "status": "ENTREGUE",
+    "items": [
+      { "name": "Produto U", "value": 135.00, "quantity": 1, "totalValue": 135.00 },
+      { "name": "Produto V", "value": 48.00, "quantity": 3, "totalValue": 144.00 }
+    ],
+    "totalOrder": 279.00,
+    "createdAt": "2024-10-29T16:50:00"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440015",
+    "clientId": 13,
+    "clientName": "Diego Mendes",
+    "status": "PENDENTE",
+    "items": [
+      { "name": "Produto W", "value": 90.00, "quantity": 2, "totalValue": 180.00 }
+    ],
+    "totalOrder": 180.00,
+    "createdAt": "2024-11-07T09:00:00"
+  }
+]

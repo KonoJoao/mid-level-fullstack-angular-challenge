@@ -3,25 +3,38 @@
     id="clients-filters"
     style="display: flex; justify-content: space-around"
   >
-    @for(entry of filtersNameMapping | keyvalue; track entry.key){
+    @for(filter of filtersArray; track filter.key){
     <div class="input-data-div">
       <p-iftalabel>
         <input
           class="input-data"
           pInputText
-          [id]="entry.key"
-          [(ngModel)]="filters[entry.key]"
+          [id]="filter.key"
+          [(ngModel)]="filters[filter.key]"
           autocomplete="off"
         />
-        <label [for]="entry.key">{{ entry.value }}</label>
+        <label [for]="filter.key">{{ filter.label }}</label>
       </p-iftalabel>
     </div>
     }
   </div>
   <div class="buttons-div">
-    <p-button id="filter-button">Filtrar</p-button>
-    <!-- <p-button id="create-button">Adicionar</p-button> -->
-    <app-modal />
+    <p-button class="buttons" id="filter-button" (onClick)="loadClients()"
+      >Filtrar</p-button
+    >
+    <p-button
+      class="buttons"
+      id="create-button"
+      (onClick)="setOpenCreateModal()"
+      >Adicionar</p-button
+    >
+    <app-modal
+      [open]="openModal"
+      [clientData]="selectedClient"
+      [title]="modalTitle"
+      (closeModal)="handleModalClose()"
+      (saveClient)="handleClientSaved($event)"
+    />
   </div>
   <div id="clients-table">
     <p-table
@@ -56,6 +69,7 @@
                   padding: 4px;
                   color: rgb(175, 175, 9);
                 "
+                (click)="setOpenEditModal(client)"
               >
                 <i class="pi pi-pencil"></i>
               </button>
@@ -67,6 +81,7 @@
                   padding: 4px;
                   color: red;
                 "
+                (click)="handleDeleteClient(client.id)"
               >
                 <i class="pi pi-times"></i>
               </button>
@@ -77,3 +92,4 @@
     </p-table>
   </div>
 </div>
+<p-toast></p-toast>

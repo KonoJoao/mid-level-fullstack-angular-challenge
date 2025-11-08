@@ -7,6 +7,7 @@ import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, ButtonModule, TabsComponent],
