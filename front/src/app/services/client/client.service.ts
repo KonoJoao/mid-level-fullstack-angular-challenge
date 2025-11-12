@@ -59,7 +59,7 @@ export class ClientService {
   }
 
   updateClient(id: number, client: ClientDto): Observable<ClientDto> {
-    console.log('passou no edit ');
+    console.log(`${this.apiUrl}/${id}`);
     return this.http.put<ClientDto>(`${this.apiUrl}/${id}`, client);
   }
 

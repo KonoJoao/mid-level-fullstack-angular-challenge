@@ -146,8 +146,6 @@ export const mockApiInterceptor: HttpInterceptorFn = (req, next) => {
     // Filtrar pedidos
     let filteredOrders = [...mockOrders];
 
-    console.log(url, clientId, clientName);
-
     if (clientId) {
       filteredOrders = filteredOrders.filter(
         (order) => order.clientId === clientId
