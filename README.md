@@ -30,12 +30,6 @@ Sistema desenvolvido em Angular para gestão de pedidos e clientes de uma pequen
 - Navegação por tabs entre Clientes e Pedidos
 - Inputs com floating labels
 
-### Testes
-
-- Testes unitários para services e components
-- Cobertura de testes para todas as funcionalidades principais
-- Mocks para interceptors e API calls
-
 ## Protótipo
 
 - A interface foi previamente prototipada no Figma, para melhor modelagem dos requisitos do documento. Pode ser acessado no domínio: https://www.figma.com/design/KZYKmeV55QjX3NpY8139VP/Untitled?node-id=0-1&t=Iryitw6mhulAqsgc-1
