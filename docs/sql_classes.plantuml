@@ -1,0 +1,47 @@
+@startuml Database_Model
+
+!define ENTITY class
+!define PK <<PK>>
+!define FK <<FK>>
+
+ENTITY Cliente {
+  + id : UUID PK
+  + nome : VARCHAR(120)
+  + email : VARCHAR(120) {unique}
+  + telefone : VARCHAR(20) {nullable}
+  + criado_em : TIMESTAMP
+}
+
+ENUM StatusPedido {
+  PENDENTE
+  APROVADO
+  CANCELADO
+}
+
+ENTITY Pedido {
+  + id : UUID PK
+  + cliente_id : UUID FK
+  + data_pedido : TIMESTAMP
+  + status : StatusPedido
+  + valor_total : DECIMAL(10,2)
+}
+
+ENTITY PedidoItem {
+  + id : UUID PK
+  + pedido_id : UUID FK
+  + produto_nome : VARCHAR(120)
+  + quantidade : INTEGER
+  + preco_unitario : DECIMAL(10,2)
+}
+
+' Relacionamentos
+Cliente ||--o{ Pedido : "possui"
+Pedido ||--o{ PedidoItem : "contém"
+Pedido ..> StatusPedido : "usa"
+
+' Notas explicativas
+note right of Cliente : "Tabela principal de clientes\nEmail deve ser único"
+note right of Pedido : "Pedidos vinculados aos clientes\nValor total calculado automaticamente"
+note right of PedidoItem : "Itens individuais do pedido\nProduto como string (sem tabela produto)"
+
+@enduml
