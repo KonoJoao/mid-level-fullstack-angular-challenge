@@ -11,7 +11,7 @@ import { OrderPageComponent } from '../order-page/order-page.component';
   styleUrl: './tabs.component.css',
 })
 export class TabsComponent {
-  currentTab = 1;
+  currentTab = 0;
 
   setCurrentTab(tab: number) {
     this.currentTab = tab;
