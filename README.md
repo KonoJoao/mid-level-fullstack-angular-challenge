@@ -206,4 +206,5 @@ Para transformar este projeto em produção:
 1. **Integração com API Real**: Substituir por API real
 2. **Testes E2E**: Adicionar testes end-to-end
 3. **Gráficos**: Implementar dashboards com ngx-charts
-4. **Tabela Produto**: Mapear entidade de produto para reutilização e melhor referência no banco de dados
+4. **Componentização**: Melhorar componentização dos recursos reutilizáveis do front
+5. **Tabela Produto**: Mapear entidade de produto para reutilização e melhor referência no banco de dados
