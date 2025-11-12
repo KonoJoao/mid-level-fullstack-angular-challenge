@@ -89,13 +89,20 @@ src/
 
 ### Execução com Docker
 
-1. **Build e execute com Docker Compose**
+1. **Clone o repositório**
+
+```bash
+git clone https://github.com/KonoJoao/mid-level-fullstack-angular-challenge.git
+cd ./mid-level-fullstack-angular-challenge/frontend/
+```
+
+2. **Build e execute com Docker Compose**
 
 ```bash
 docker-compose up --build
 ```
 
-2. **Acesse no navegador**
+3. **Acesse no navegador**
 
 ```
 http://localhost:4200
@@ -106,8 +113,8 @@ http://localhost:4200
 1. **Clone o repositório**
 
 ```bash
-git clone <url-do-repositorio>
-cd mid-level-fullstack-angular-challenge
+git clone https://github.com/KonoJoao/mid-level-fullstack-angular-challenge.git
+cd ./mid-level-fullstack-angular-challenge/frontend/
 ```
 
 2. **Instale as dependências**
