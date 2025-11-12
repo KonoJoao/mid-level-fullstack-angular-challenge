@@ -58,7 +58,7 @@ Sistema desenvolvido em Angular para gestão de pedidos e clientes de uma pequen
 - **LocalStorage** - Persistência de dados durante a sessão
 - **JSON** - Dados mockados
 
-## 📦 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 src/
@@ -80,14 +80,14 @@ src/
 └── └── app.component.ts     # Componente principal
 ```
 
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 
 ### Pré-requisitos
 
 - Docker
-- Node.js 20.18.3 e Angular CLI 19 (opcionais)
+- Node.js 20.18.3 e Angular CLI 19 (opcionais, caso vá rodar com docker)
 
-### 🐳 Execução com Docker
+### Execução com Docker
 
 1. **Build e execute com Docker Compose**
 
