@@ -114,7 +114,6 @@ cd ./mid-level-fullstack-angular-challenge/frontend/
 2. **Instale as dependências**
 
 ```bash
-cd frontend
 npm install --legacy-peer-deps
 ```
 
